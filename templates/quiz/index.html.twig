@@ -5,43 +5,61 @@
 
 {% block body %}
 	<style>
-		.example-wrapper {
-			margin: 1em auto;
-			max-width: 800px;
-			width: 95%;
-			font: 18px / 1.5 sans-serif;
-		}
-		.example-wrapper code {
-			background: #F5F5F5;
-			padding: 2px 6px;
+		.row.justify-content-center.quiz {
+			margin-bottom: 50%;
+			margin-top: 50%;
 		}
 	</style>
 
-	<div class="example-wrapper">
-		<h1>Hello
-			{{ controller_name }}! ✅</h1>
-
-		This friendly message is coming from:
-		<ul>
-			<li>Your controller at
-				<code>
-					<a href="{{ '/Users/yuna/Documents/GitHub/PC-EPSI-Workshop-M1/src/Controller/QuizController.php'|file_link(0) }}">src/Controller/QuizController.php</a>
-				</code>
-			</li>
-			<li>Your template at
-				<code>
-					<a href="{{ '/Users/yuna/Documents/GitHub/PC-EPSI-Workshop-M1/templates/quiz/index.html.twig'|file_link(0) }}">templates/quiz/index.html.twig</a>
-				</code>
-			</li>
-		</ul>
-		<div class="container">
-			<div class="row justify-content-center">
-				<div
-					class="col-md-8">
-					<!-- Utilisation de la classe 'card' de Bootstrap -->
-					<div class="card">
+	<div class="container">
+		<div class="row justify-content-center my-5">
+			<div
+				class="col-md-8">
+				<!-- Utilisation de la classe 'card' de Bootstrap -->
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">Quiz</h5>
+						<p class="card-text text-center">Bienvenue sur le Quiz sur la Sensibilisation du Harcèlement Sexuel en Entreprise !</p>
+						{# <a href="{{ path('question') }}" class="btn btn-primary">Commencer le Quiz</a> #}
 						<div class="card-body">
-							<h5 class="card-title">Quiz</h5>
+							<form action="#&action_php" class="was-validated">
+								<div class="mb-3 mt-3">
+									<label for="uname" class="form-label">Username:</label>
+									<input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+									<div class="valid-feedback">Valid.</div>
+									<div class="invalid-feedback">Please fill out this field.</div>
+								</div>
+								<div class="mb-3 mt-3">
+									<label for="uname" class="form-label">Age:</label>
+									<input type="number" class="form-control" id="uname" placeholder="Entrez votre âge" name="uname" required>
+									<div class="valid-feedback">Valid.</div>
+									<div class="invalid-feedback">Please fill out this field.</div>
+								</div>
+								<div class="mb-3 mt-3">
+									<label for="sexe" class="form-label">Sexe:</label><br>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" required>
+										<label class="form-check-label" for="inlineRadio1">Homme</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" required>
+										<label class="form-check-label" for="inlineRadio2">Femme</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" required>
+										<label class="form-check-label" for="inlineRadio3">Autres</label>
+									</div>
+									<div class="valid-feedback">Valid.</div>
+									<div class="invalid-feedback">Check this checkbox to continue.</div>
+								</div>
+								<div class="form-check mb-3">
+									<input class="form-check-input" type="checkbox" id="myCheck" name="remember" required>
+									<label class="form-check-label" for="myCheck">I agree on blabla.</label>
+									<div class="valid-feedback">Valid.</div>
+									<div class="invalid-feedback">Check this checkbox to continue.</div>
+								</div>
+								<button type="submit" class="btn btn-primary">Commencer le Quiz</button>
+							</form>
 						</div>
 					</div>
 				</div>
