@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Anonymous;
-use App\Form\RegistrationFormType;
+use App\Form\AnonymousFormType;
 use App\Security\AppAuthenticator;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,14 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class QuizController extends AbstractController
 {
     #[Route('/quiz', name: 'app_quiz')]
-    public function index(): Response
-    {
-        return $this->render('quiz/index.html.twig', [
-            'controller_name' => 'QuizController',
-        ]);
-    }
-    #[Route('/quiz', name: 'app_quiz-enter')]
-    public function startquiz(Request $request, EntityManagerInterface $entityManager): Response
+    public function index(Request $request, EntityManagerInterface $entityManager): Response
     {
         $user = new Anonymous();
         $form = $this->createForm(AnonymousFormType::class, $user);
