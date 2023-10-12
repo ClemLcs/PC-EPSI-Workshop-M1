@@ -4,110 +4,110 @@
 {% endblock %}
 
 {% block body %}
-<style>
-	.row.justify-content-center.quiz {
-		margin-bottom: 50%;
-		margin-top: 50%;
-	}
-	.bubble-text {
-		background: #139ee0;
-		color: #fff;
-		padding: 7px 15px;
-		border-radius: 3px;
-	}
+	<style>
+		.row.justify-content-center.quiz {
+			margin-bottom: 50%;
+			margin-top: 50%;
+		}
+		.bubble-text {
+			background: #139ee0;
+			color: #fff;
+			padding: 7px 15px;
+			border-radius: 3px;
+		}
 
-	.bubble-text::after {
-		content: "";
-		border-left: 20px solid transparent;
-		border-right: 20px solid transparent;
-		border-top: 20px solid #139ee0;
-		position: absolute;
-	}
-</style>
-{% for flash_error in app.flashes('verify_email_error') %}
-	<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
-{% endfor %}
-<ul class="nav nav-tabs visually-hidden" id="myTab" role="tablist">
-	<li class="nav-item" role="presentation">
-		<button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true">Start</button>
-	</li>
-	<!-- boucle pour générer les questions du quiz -->
-	<li class="nav-item" role="presentation">
-		<button class="nav-link" id="standard-tab" data-bs-toggle="tab" data-bs-target="#standard" type="button" role="tab" aria-controls="standard" aria-selected="false">Standard</button>
-	</li>
-</ul>
-<main class="tab-content">
-	<div class="tab-pane active" id="login" role="tabpanel" aria-labelledby="login-tab">
-		<div class="container">
-			<div class="row justify-content-center my-5 visually-hidden">
-				<div
-					class="col-md-8">
-					<!-- Utilisation de la classe 'card' de Bootstrap -->
-					<div class="card">
-						<div class="card-body">
-							<h5 class="card-title">Quiz</h5>
-							<p class="card-text text-center">Bienvenue sur le Quiz sur la Sensibilisation du Harcèlement Sexuel en Entreprise !</p>
-							{# <a href="{{ path('question') }}" class="btn btn-primary">Commencer le Quiz</a> #}
+		.bubble-text::after {
+			content: "";
+			border-left: 20px solid transparent;
+			border-right: 20px solid transparent;
+			border-top: 20px solid #139ee0;
+			position: absolute;
+		}
+	</style>
+	{% for flash_error in app.flashes('verify_email_error') %}
+		<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+	{% endfor %}
+	<ul class="nav nav-tabs visually-hidden" id="myTab" role="tablist">
+		<li class="nav-item" role="presentation">
+			<button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true">Start</button>
+		</li>
+		<!-- boucle pour générer les questions du quiz -->
+		<li class="nav-item" role="presentation">
+			<button class="nav-link" id="standard-tab" data-bs-toggle="tab" data-bs-target="#standard" type="button" role="tab" aria-controls="standard" aria-selected="false">Standard</button>
+		</li>
+	</ul>
+	<main class="tab-content">
+		<div class="tab-pane active" id="login" role="tabpanel" aria-labelledby="login-tab">
+			<div class="container">
+				<div class="row justify-content-center my-5 visually-hidden">
+					<div
+						class="col-md-8">
+						<!-- Utilisation de la classe 'card' de Bootstrap -->
+						<div class="card">
 							<div class="card-body">
-								<form method="post" class="was-validated">
-									<div class="mb-3 mt-3">
-										<label for="uname" class="form-label">Username:</label>
-										<input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
-										<div class="valid-feedback">Valid.</div>
-										<div class="invalid-feedback">Please fill out this field.</div>
-									</div>
-									<div class="mb-3 mt-3">
-										<label for="uname" class="form-label">Age:</label>
-										<input type="number" class="form-control" id="uname" placeholder="Entrez votre âge" name="uname" required>
-										<div class="valid-feedback">Valid.</div>
-										<div class="invalid-feedback">Please fill out this field.</div>
-									</div>
-									<div class="mb-3 mt-3">
-										<label for="sexe" class="form-label">Sexe:</label><br>
-										<div class="form-check">
-											<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" required>
-											<label class="form-check-label" for="inlineRadio1">Homme</label>
+								<h5 class="card-title">Quiz</h5>
+								<p class="card-text text-center">Bienvenue sur le Quiz sur la Sensibilisation du Harcèlement Sexuel en Entreprise !</p>
+								{# <a href="{{ path('question') }}" class="btn btn-primary">Commencer le Quiz</a> #}
+								<div class="card-body">
+									<form method="post" class="was-validated">
+										<div class="mb-3 mt-3">
+											<label for="uname" class="form-label">Username:</label>
+											<input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+											<div class="valid-feedback">Valid.</div>
+											<div class="invalid-feedback">Please fill out this field.</div>
 										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" required>
-											<label class="form-check-label" for="inlineRadio2">Femme</label>
+										<div class="mb-3 mt-3">
+											<label for="uname" class="form-label">Age:</label>
+											<input type="number" class="form-control" id="uname" placeholder="Entrez votre âge" name="uname" required>
+											<div class="valid-feedback">Valid.</div>
+											<div class="invalid-feedback">Please fill out this field.</div>
 										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" required>
-											<label class="form-check-label" for="inlineRadio3">Autres</label>
+										<div class="mb-3 mt-3">
+											<label for="sexe" class="form-label">Sexe:</label><br>
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" required>
+												<label class="form-check-label" for="inlineRadio1">Homme</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" required>
+												<label class="form-check-label" for="inlineRadio2">Femme</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" required>
+												<label class="form-check-label" for="inlineRadio3">Autres</label>
+											</div>
+											<div class="valid-feedback">Valid.</div>
+											<div class="invalid-feedback">Check this checkbox to continue.</div>
 										</div>
-										<div class="valid-feedback">Valid.</div>
-										<div class="invalid-feedback">Check this checkbox to continue.</div>
-									</div>
-									<div class="form-check mb-3">
-										<input class="form-check-input" type="checkbox" id="myCheck" name="remember" required>
-										<label class="form-check-label" for="myCheck">I agree on blabla.</label>
-										<div class="valid-feedback">Valid.</div>
-										<div class="invalid-feedback">Check this checkbox to continue.</div>
-									</div>
-									<button type="submit" class="btn btn-primary">Commencer le Quiz</button>
-								</form>
+										<div class="form-check mb-3">
+											<input class="form-check-input" type="checkbox" id="myCheck" name="remember" required>
+											<label class="form-check-label" for="myCheck">I agree on blabla.</label>
+											<div class="valid-feedback">Valid.</div>
+											<div class="invalid-feedback">Check this checkbox to continue.</div>
+										</div>
+										<button type="submit" class="btn btn-primary">Commencer le Quiz</button>
+									</form>
+								</div>
 							</div>
 						</div>
 					</div>
+
 				</div>
-
-			</div>
-			<div class="row justify-content-center my-5">
-				<div class="col-md-8">
-					<div class="card">
-						<div class="card-body">
-							<h5 class="card-title">Quiz Start</h5>
-							<p class="card-text text-center">Bienvenue sur le Quiz sur la Sensibilisation du Harcèlement Sexuel en Entreprise !</p>
+				<div class="row justify-content-center my-5">
+					<div class="col-md-8">
+						<div class="card">
 							<div class="card-body">
-								{{ form_errors(anonymousForm) }}
+								<h5 class="card-title">Quiz Start</h5>
+								<p class="card-text text-center">Bienvenue sur le Quiz sur la Sensibilisation du Harcèlement Sexuel en Entreprise !</p>
+								<div class="card-body">
+									{{ form_errors(anonymousForm) }}
 
-								{{ form_start(anonymousForm, {
+									{{ form_start(anonymousForm, {
 									'attr': {
 										'class': 'was-validated'
 										}
 								}) }}
-								{{ form_row(anonymousForm.pseudo, {
+									{{ form_row(anonymousForm.pseudo, {
 									'attr': {
 										'class': 'form-control',
 										'placeholder': 'Entrez votre nom d\'utilisateur',
@@ -130,87 +130,81 @@
 								}) }}
 								{{ form_row(anonymousForm.agreeTerms, {
 									'attr': {
-										'class': 'form-control',
-										'placeholder': 'Entrez votre sexe',
+										'class': 'form-check-input',
+										'placeholder': 'Validez les conditions d\'utilisation',
 										'required': true
 									}
 								}) }}
-								{{ form_row(anonymousForm.submit, {
+									{{ form_row(anonymousForm.submit, {
 									'attr': {
 										'class': 'btn btn-primary'
 									}
 								}) }}
-							{{ form_end(anonymousForm, {}) }}
+									{{ form_end(anonymousForm, {}) }}
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-	<div class="tab-pane" id="standard" role="tabpanel" aria-labelledby="standard-tab">
-            <div class="container mt-5">
-                <div class="d-flex justify-content-center row">
-                    <div class="col-md-10 col-lg-10">
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="card-header">Testimony</div>
-                            <div class="card-body">
-                                <div class="container row">
-                                    <div class="col-xl-6">
-                                        <div class="bubble">
-                                            <div class="bubble-text">
-                                                <h1>Bubble quiz</h1>
-                                                <hr>
-                                                <p>Est ce que des mails à caractère personnel envoyés en dehors des
-                                                    heures de travail peut être considéré comme du harcèlement au
-                                                    travail ?</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        Formulaire du Quizz
-                                        <form action="#&action_php" class="was-validated">
-                                            <div class="mb-3 mt-3">
-                                                <label for="sexe" class="form-label">Propositions:</label><br>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio"
-                                                        name="inlineRadioOptions" id="inlineRadio1" value="option1"
-                                                        required>
-                                                    <label class="form-check-label" for="inlineRadio1">Texte1</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio"
-                                                        name="inlineRadioOptions" id="inlineRadio2" value="option2"
-                                                        required>
-                                                    <label class="form-check-label" for="inlineRadio2">Text2</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio"
-                                                        name="inlineRadioOptions" id="inlineRadio3" value="option3"
-                                                        required>
-                                                    <label class="form-check-label" for="inlineRadio3">Text3</label>
-                                                </div>
-                                                <div class="valid-feedback">Valid.</div>
-                                                <div class="invalid-feedback">Check this checkbox to continue.</div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                <div class="container row">
-                                    <div class="col text-start">
-                                        <button type="submit" class="btn btn-secondary">Précédent</button>
-                                    </div>
-                                    <div class="col text-end">
-                                        <button type="submit" class="btn btn-success">Suivant</button>
-                                    </div>
-                                </div>
+			<div class="tab-pane" id="standard" role="tabpanel" aria-labelledby="standard-tab">
+				<div class="container mt-5">
+					<div class="d-flex justify-content-center row">
+						<div class="col-md-10 col-lg-10">
+							<div class="card mb-3" style="max-width: 540px;">
+								<div class="card-header">Testimony</div>
+								<div class="card-body">
+									<div class="container row">
+										<div class="col-xl-6">
+											<div class="bubble">
+												<div class="bubble-text">
+													<h1>Bubble quiz</h1>
+													<hr>
+													<p>Est ce que des mails à caractère personnel envoyés en dehors des
+														                                                    heures de travail peut être considéré comme du harcèlement au
+														                                                    travail ?</p>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-4">
+											Formulaire du Quizz
+											<form action="#&action_php" class="was-validated">
+												<div class="mb-3 mt-3">
+													<label for="sexe" class="form-label">Propositions:</label><br>
+													<div class="form-check">
+														<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" required>
+														<label class="form-check-label" for="inlineRadio1">Texte1</label>
+													</div>
+													<div class="form-check">
+														<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" required>
+														<label class="form-check-label" for="inlineRadio2">Text2</label>
+													</div>
+													<div class="form-check">
+														<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" required>
+														<label class="form-check-label" for="inlineRadio3">Text3</label>
+													</div>
+													<div class="valid-feedback">Valid.</div>
+													<div class="invalid-feedback">Check this checkbox to continue.</div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+								<div class="card-footer">
+									<div class="container row">
+										<div class="col text-start">
+											<button type="submit" class="btn btn-secondary">Précédent</button>
+										</div>
+										<div class="col text-end">
+											<button type="submit" class="btn btn-success">Suivant</button>
+										</div>
+									</div>
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-</main>
-{% endblock %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	{% endblock %}
