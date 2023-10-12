@@ -18,8 +18,11 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 
 class RegistrationController extends AbstractController
 {
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> f93e01150d6b273e50ee82cc5fc2ec8eedcf441a
     #[Route('/register', name: 'app_register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, AppAuthenticator $authenticator, EntityManagerInterface $entityManager): Response
     {

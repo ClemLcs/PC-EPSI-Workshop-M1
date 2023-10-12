@@ -61,7 +61,10 @@ class AnonymousFormType extends AbstractType
                     // 'widget' => 'single_text',
                     // 'html5' => false,
                     // 'attr' => ['class' => 'datepicker'],
+<<<<<<< HEAD
                     // 'years' => range(date('Y') - 10, date('Y') + 10), // Vous pouvez ajuster la plage d'années ici
+=======
+>>>>>>> f93e01150d6b273e50ee82cc5fc2ec8eedcf441a
                 ],
             ])
             ->add('submit', SubmitType::class, [
