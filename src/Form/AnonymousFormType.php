@@ -58,6 +58,9 @@ class AnonymousFormType extends AbstractType
                     new NotBlank([
                         'message' => 'Please enter your age.',
                     ]),
+                    // 'widget' => 'single_text',
+                    // 'html5' => false,
+                    // 'attr' => ['class' => 'datepicker'],
                 ],
             ])
             ->add('submit', SubmitType::class, [
