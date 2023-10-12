@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Welcome !{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <h2>Identification de l'éditeur</h2>
+                <p>WorkShop I1 2023 - Groupe 3 - EPSI Bordeaux/p>
+                <p>114 rue Lucien Faure, 33000 Bordeaux France</p>
+                <p>Ce site est hébergé par OVH SAS 2 rue Kellermann - 59100 Roubaix - France</p>
+
+                <br><br>
+
+                <h2>Données personnelles</h2>
+                <p>D'une façon générale, vous pouvez visiter notre site sur Internet sans avoir à décliner votre
+                    identité et à fournir des informations personnelles vous concernant. Cependant, nous pouvons parfois
+                    vous demander des informations en suivant notre registre de traitement des données personnels .</p>
+
+                <img src="{{ asset('assets//img//img.png') }}" alt="">
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
